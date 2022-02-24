@@ -3,6 +3,6 @@
 
    class HomeController{
        public function index(){
-           View::load('home');
+           View::load('component/home');
        }
    }

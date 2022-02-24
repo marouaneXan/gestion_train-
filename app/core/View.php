@@ -7,7 +7,9 @@
            if(file_exists($file)){
             extract($view_data);
             ob_start();
+            require VIEWS.'includes/header.php';
             require_once $file;
+            require VIEWS.'includes/footer.php';
             ob_end_flush();
            } 
        }

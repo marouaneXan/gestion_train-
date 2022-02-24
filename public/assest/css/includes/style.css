@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    height: 80px;
+}
+a img{
+    height: 82px;
+}
+.navbar-nav .btn{
+    width: 92px;
+    border-radius: 38px;
+    margin-left: 12px;
+}
+.navbar-nav .btn:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
