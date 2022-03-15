@@ -17,8 +17,8 @@
                 $sign_in=new Login();
                 $login=$sign_in->sign_in($data['email'],$data['password']);
                 if($login){
-                    $data['success']='<div class="alert alert-success text-center" role="alert">Success</div>';
-                    $_SESSION['client_id']=$data['id'];
+                    $Selected_client_id=$sign_in->Get_id($data['email'],$data['password']);
+                    $_SESSION['client_id']=$Selected_client_id[0];
                     $_SESSION['client_email']=$data['email'];
                     header('location:'.BURL.'home');
                     View::load('component/home',$data);

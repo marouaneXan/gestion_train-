@@ -1,16 +1,67 @@
 
 
-<div class="container" style="border:1px solid red;">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-10 mt-5 pt-5">
-            <div class="row" >
-                <div class="col-sm-4 bg-info rounded-left">
-                    <div class="card-block text-center text-white">
-                        <i class="fas fas-user-tie fa-7 mt-5"></i>
-                        <i class="fas fas-edit fa-2x mt-4"></i>
-                    </div>
-                </div>
+<h1 class="text-center mt-2"><?php echo $title?></h1>
+<div class="container d-flex justify-content-center">
+    <div class="card bg-ligth p-3 my-5" style="width: 40rem;">
+        <div class="row" class="image">
+            <img src="../../../public/assest/images/avatar.png" alt="">
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="mb-0">First Name</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+                <?php echo $info['nom']; ?>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="mb-0">Last Name</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+                <?php echo $info['prenom']; ?>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="mb-0">Birthday</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+                <?php echo $info['date_naissance']; ?>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+                <?php echo $info['email']; ?>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3">
+                <h6 class="mb-0">Password</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+                <?php echo $info['password']; ?>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+<style>
+    .row img{
+        width: 96px;
+        height: 90px;
+        border-radius: 50%;
+        margin:auto;
+    }
+</style>

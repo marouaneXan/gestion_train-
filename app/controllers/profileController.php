@@ -4,6 +4,11 @@
 
   class ProfileController{
       public function index(){
-          View::load('component/profile');
+          $b=new booking();
+          $data=[
+              'title'=>'Informations',
+              'info'=>$b->get_client($_SESSION['client_email'])
+          ];
+          View::load('component/profile',$data);
       }
   }

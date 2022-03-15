@@ -2,7 +2,6 @@
 
 
 
-
   class log_outController{
       public function index(){
         session_destroy();
