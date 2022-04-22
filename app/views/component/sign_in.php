@@ -1,5 +1,5 @@
 
- <div class="container mt-5 p-3" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+<div class="container mt-5 p-3" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
      <?php if(isset($success)): ?>
         <?php echo $success; ?>
      <?php endif;?>

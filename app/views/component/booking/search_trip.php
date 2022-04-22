@@ -18,6 +18,7 @@
                     </tr>
                 </thead>
                 <tbody>
+
                     <?php foreach($result as $row):?>
                             <tr>
                                 <td class="text-center"><?php echo $row['ville_depart']; ?></td>

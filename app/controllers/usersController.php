@@ -11,10 +11,10 @@
            ];
             View::load('component/admin/users',$data);
        }
-       public function deleteUser($id){
-        $u=new users();
-        if($u->deleteUser($id)){
-            header('location:'.BURL.'users');
-        }
-       }
+    //    public function deleteUser($id){
+    //     $u=new users();
+    //     if($u->deleteUser($id)){
+    //         header('location:'.BURL.'users');
+    //     }
+    //    }
    }

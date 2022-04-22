@@ -7,18 +7,38 @@
       $data=[
         'title'=>'Search For Trip',
         'ville_depart'=>'',
-        'ville_arrivee'=>''
+        'ville_arrivee'=>'',
+        'heure_depart'=>''
       ];
+      // $date_now = date("Y-m-d");
+
       if($_SERVER['REQUEST_METHOD']=='POST'){
         $data=[
           'title'=>'Search For Trip',
           'ville_depart'=>trim($_POST['ville_depart']),
           'ville_arrivee'=>trim($_POST['ville_arrivee']),
+          'heure_depart'=>trim($_POST['date_depart']),
           'result'=>''
         ];
+        $date_choosed = date("Y-m-d", strtotime($data["heure_depart"]));
+
         if($b->search_trip($data['ville_depart'],$data['ville_arrivee'])){
           $data['result']=$b->search_trip($data['ville_depart'],$data['ville_arrivee']);
-          View::load('component/booking/search_trip',$data);
+          
+          $count = count($data["result"]);
+          for ($i=0; $i < $count; $i++) {
+            $date_str = strtotime($data["result"][$i]["heure_depart"]);
+            if($date_choosed > date("Y-m-d", $date_str)){
+              unset($data["result"][$i]);
+            }
+          } 
+          if(empty($data["result"])){
+            $data['warning']='There is no travel available for this Trip';
+            View::load('component/booking/index',$data);
+          } else {
+            View::load('component/booking/search_trip',$data);
+          }
+
         }else{
           $data['warning']='There is no travel available for this Trip';
           View::load('component/booking/index',$data);

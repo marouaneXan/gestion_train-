@@ -18,7 +18,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
   <div class="container-fluid">
-    <a class="navbar-brand" href="<?php url('home'); ?>"><img src="../../../public/assest/images/logo 1.svg" alt=""></a>
+    <a class="navbar-brand" href="<?php url('home'); ?>">Train.com</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,7 +38,10 @@
               <a class="nav-link" href="<?php  url('clients'); ?>">Clients</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="<?php  url('tickets'); ?>">Tickets</a>
+              <a class="nav-link" href="<?php  url('bookingUsers'); ?>">Booking users</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="<?php  url('bookingClients'); ?>">Booking Clients</a>
           </li>
       <?php else:?>
 
@@ -56,7 +59,7 @@
             <a class="nav-link" href="<?php url('profile'); ?>">Profile</a>
           </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?php url('basket'); ?>"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="nav-link" href="<?php url('basket'); ?>">Panier<i class="fa-solid fa-cart-shopping"></i></a>
         </li>
         <?php endif;?>
       <?php endif;?>
@@ -66,8 +69,8 @@
         <?php if(isset($_SESSION['client_email']) || isset($_SESSION['admin_email'])): ?>
           <a class="btn btn-outline-dark" href="<?php url('Log_out'); ?>">Logout</a>
         <?php else: ?>
-          <a class="btn btn-outline-dark" href="<?php url('sign_in'); ?>">Sign in</a>
-          <a class="btn btn-outline-dark" href="<?php url('sign_up'); ?>">Sign up</a>
+          <a class="btn btn-outline-dark m-0" href="<?php url('sign_in'); ?>">Sign in</a>
+          <a class="btn btn-outline-dark m-0" href="<?php url('sign_up'); ?>">Sign up</a>
         <?php endif;?>
       </ul>
     </div>
@@ -77,5 +80,23 @@
 
 
 
-
+<style>
   
+   *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a img{
+    height: 82px;
+}
+.navbar-nav .btn{
+    width: 92px;
+    border-radius: 38px;
+}
+.navbar-nav .btn:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+</style>

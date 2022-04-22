@@ -8,7 +8,6 @@
                         <th scope="col" class="text-center">Last name</th>
                         <th scope="col" class="text-center">Age</th>
                         <th scope="col" class="text-center">Email</th>
-                        <th scope="col" class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,9 +17,6 @@
                             <td scope="col" class="text-center"><?php echo $row['prenom'];?></td>
                             <td scope="col" class="text-center"><?php echo $row['date_naissance'];?></td>
                             <td scope="col" class="text-center"><?php echo $row['email'];?></td>
-                            <td scope="col" class="text-center">
-                                <a href="<?php url('users/deleteUser/'.$row['id']); ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-                            </td>
                         </tr>
                     <?php endforeach;?>
                 </tbody>

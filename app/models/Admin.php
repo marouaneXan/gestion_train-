@@ -38,6 +38,41 @@
             return $sql->rowCount();
         }return 0;
       }
+      //number of booking users
+      public function get_number_booking_users(){
+        $sql='SELECT * FROM panieruser';
+        $sql=$this->connect()->prepare($sql);
+        if($sql->execute()){
+          if($sql->rowCount()>0)
+            return $sql->rowCount();
+        }return 0;
+      }
+      public function get_all_booking_users(){
+        $sql = "SELECT U.nom , V.ville_depart , V.ville_arrivee , V.heure_depart ,T.nom as Nom_Train, V.price FROM train T , user U, voyage V, `panieruser` WHERE panieruser.id_user=U.id and panieruser.id_voyage=V.id and V.id_train=T.id";
+        //SELECT C.nom , V.ville_depart , V.ville_arrivee , V.heure_depart ,T.nom as Nom_Train, V.price FROM train T , client C, voyage V, `panierclient` WHERE panierclient.id_client=C.id and panierclient.id_voyage=V.id and V.id_train=T.id
+        $sql = $this->connect()->prepare($sql);
+        if($sql->execute())
+          return $sql->fetchAll();
+        return 0;
+      }
+      public function get_all_booking_clients(){
+        $sql = "SELECT C.nom , V.ville_depart , V.ville_arrivee , V.heure_depart ,T.nom as Nom_Train, V.price FROM train T , client C, voyage V, `panierClient` WHERE panierclient.id_client=C.id and panierclient.id_voyage=V.id and V.id_train=T.id";
+        //SELECT C.nom , V.ville_depart , V.ville_arrivee , V.heure_depart ,T.nom as Nom_Train, V.price FROM train T , client C, voyage V, `panierclient` WHERE panierclient.id_client=C.id and panierclient.id_voyage=V.id and V.id_train=T.id
+        $sql = $this->connect()->prepare($sql);
+        if($sql->execute())
+          return $sql->fetchAll();
+        return 0;
+      }
+      //nimber of booking clients;
+      public function get_number_booking_clients(){
+        $sql='SELECT * FROM panierclient';
+        $sql=$this->connect()->prepare($sql);
+        if($sql->execute()){
+          if($sql->rowCount()>0)
+            return $sql->rowCount();
+        }return 0;
+      }
+
       // public function get_number_tickets(){
       //   $sql='SELECT * FROM billet';
       //   $sql=$this->connect()->prepare($sql);

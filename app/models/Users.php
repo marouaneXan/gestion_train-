@@ -16,18 +16,18 @@
             return $sql->fetchAll();
         }return 0;
       }
-      public function deleteUser($id){
-        $sql='DELETE FROM user WHERE id like ?';
-        $sql=$this->connect()->prepare($sql);
-        if($sql->execute(array($id)))
-           return 1;
-        return 0;
-      }
-      public function deleteClient($id){
-        $sql='DELETE FROM client WHERE id like ?';
-        $sql=$this->connect()->prepare($sql);
-        if($sql->execute(array($id)))
-           return 1;
-        return 0;
-      }
+      // public function deleteUser($id){
+      //   $sql='DELETE FROM user WHERE id like ?';
+      //   $sql=$this->connect()->prepare($sql);
+      //   if($sql->execute(array($id)))
+      //      return 1;
+      //   return 0;
+      // }
+      // public function deleteClient($id){
+      //   $sql='DELETE FROM client WHERE id like ?';
+      //   $sql=$this->connect()->prepare($sql);
+      //   if($sql->execute(array($id)))
+      //      return 1;
+      //   return 0;
+      // }
   }

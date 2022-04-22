@@ -1,5 +1,6 @@
-
+<?php if(!empty($trips)):?>
 <h1 class="text-center p-3"><?php echo $title;?> </h1>
+<?php endif?>
 <div class="container">
         <?php
             if(isset($success)){
@@ -56,6 +57,9 @@
               </div>
             </div>
             <!-- end of modal-->
+            <?php if(empty($trips)):?>
+                <h1 class="text-center">There is no Trips Yet</h1>
+            <?php else:?>
             <a href="<?php url('home');?>" class="btn btn-sm btn-dark mb-2"><i class="fa-solid fa-house"></i></a>
             <table class="table">
                 <thead class="thead-dark">
@@ -95,6 +99,7 @@
                     <?php endforeach;?>
                 </tbody>
             </table>
+            <?php endif?>
         </div>
     </div>
 </div>

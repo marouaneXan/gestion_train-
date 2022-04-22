@@ -1,6 +1,5 @@
 <?php
 
-
   class Booking extends DB{
 
     public function search_trip($ville_depart,$ville_arrivee){
@@ -39,7 +38,7 @@
       return 0;
     }
     public function get_res_client($id){
-      $sql = "SELECT C.nom , V.ville_depart , V.ville_arrivee , V.heure_depart ,T.nom as Nom_Train, V.price FROM train T , client C, voyage V, `panierclient` WHERE panierclient.id_client=C.id and panierclient.id_voyage=V.id and V.id_train=T.id and C.id=?";
+      $sql = "SELECT  V.id,C.nom , V.ville_depart , V.ville_arrivee , V.heure_depart ,T.nom as Nom_Train, V.price FROM train T , client C, voyage V, `panierclient` WHERE panierclient.id_client=C.id and panierclient.id_voyage=V.id and V.id_train=T.id and C.id=?";
       //SELECT C.nom , V.ville_depart , V.ville_arrivee , V.heure_depart ,T.nom as Nom_Train, V.price FROM train T , client C, voyage V, `panierclient` WHERE panierclient.id_client=C.id and panierclient.id_voyage=V.id and V.id_train=T.id
       $sql = $this->connect()->prepare($sql);
       if($sql->execute(array($id)))
@@ -58,6 +57,13 @@
       $sql=$this->connect()->prepare($sql);
       if($sql->execute(array($id_client,$id_voyage)))
         return 1;
+      return 0;
+    }
+    public function Cancel_res($id){
+      $sql='DELETE FROM panierclient WHERE panierclient.id = ?';
+      $sql=$this->connect()->prepare($sql);
+      if($sql->execute(array($id)))
+         return 1;
       return 0;
     }
 

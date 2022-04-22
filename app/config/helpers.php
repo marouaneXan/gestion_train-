@@ -4,6 +4,9 @@
   function url($url=''){
       echo BURL.$url;
   }
+  function url2($url=''){
+    echo '../../public/assest/images/'.$url;
+  }
   // function set($type,$message){
   //   setcookie($type,$message,time()+5,'/');
   // }

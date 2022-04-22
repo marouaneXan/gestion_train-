@@ -5,7 +5,6 @@
   <div class="container">
         <div class="row">
             <div class="col-8 mx-auto">
-
                 <?php if(isset($warning)): ?>
                     <h3 class="alert alert-warning text-center"><?php echo $warning; ?></h3>
                 <?php endif; ?> 
@@ -20,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label for="date_depart">My departure date</label>
-                        <input type="datetime-local" required class="form-control" name="date_depart" id="date_depart">
+                        <input type="date" required class="form-control" name="date_depart" id="date_depart" min="<?=date('Y-m-d')?>">
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary">Search</button>
                 </form>

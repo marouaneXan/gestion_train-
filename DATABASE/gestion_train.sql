@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `admin`
 --
 
-CREATE TABLE `admin` (
+CREATE OR REPLACE TABLE `admin` (
   `email` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -45,7 +45,7 @@ INSERT INTO `admin` (`email`, `password`) VALUES
 -- Structure de la table `billet`
 --
 
-CREATE TABLE `billet` (
+CREATE OR REPLACE TABLE `billet` (
   `id` int(11) NOT NULL,
   `date_billet` date NOT NULL,
   `id_voyage` int(11) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `billet` (
 -- Structure de la table `client`
 --
 
-CREATE TABLE `client` (
+CREATE OR REPLACE TABLE `client` (
   `id` int(11) NOT NULL,
   `password` int(250) NOT NULL,
   `nom` varchar(250) NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE `client` (
 -- Structure de la table `train`
 --
 
-CREATE TABLE `train` (
+CREATE OR REPLACE TABLE `train` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `nbr_place` int(11) NOT NULL
@@ -85,7 +85,7 @@ CREATE TABLE `train` (
 -- Structure de la table `user`
 --
 
-CREATE TABLE `user` (
+CREATE OR REPLACE TABLE `user` (
   `id` int(11) NOT NULL,
   `nom` varchar(250) NOT NULL,
   `prenom` varchar(250) NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE `user` (
 -- Structure de la table `voyage`
 --
 
-CREATE TABLE `voyage` (
+CREATE OR REPLACE TABLE `voyage` (
   `id` int(11) NOT NULL,
   `heure_depart` time NOT NULL,
   `ville_depart` varchar(250) NOT NULL,

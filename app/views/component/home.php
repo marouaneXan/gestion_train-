@@ -40,7 +40,7 @@
             <div class="card-body">
             <h4 class="card-title">Booking Clients<span style="float:right;"><i class="fa-solid fa-ticket" style="color:black"></i></span></h4>
             <hr>
-            <p class="card-text" style="font-size:20px;"><?php echo 'hello'; ?></p>
+            <p class="card-text" style="font-size:20px;"><?php echo $number_booking_clients; ?></p>
             </div>
          </div>
       </div>
@@ -49,7 +49,7 @@
             <div class="card-body">
             <h4 class="card-title">Booking Users<span style="float:right;"><i class="fa-solid fa-ticket" style="color:black"></i></span></h4>
             <hr>
-            <p class="card-text" style="font-size:20px;"><?php echo 'hello'; ?></p>
+            <p class="card-text" style="font-size:20px;"><?php echo $number_booking_users; ?></p>
             </div>
          </div>
       </div>
@@ -57,17 +57,29 @@
       </div>
 <?php else:?>
    <div class="pic">
-      <img src="../../public/assest/images/home.png" alt="" >
-      <div class="carousel-caption d-none d-md-block">
-        <h1 class="animated zoomIn" style="animation-delay: 1s;">ONLINE TICKET RESERVATION SYSTEM</h1>
-        <p class="animated fadeInLeft" style="animation-delay: 2s;">WELCOME TO E-TECKITING FOR RAILWAYS</p>
-        <a class="btn btn-primary" href="<?php echo url('booking'); ?>" style="animation-delay: 3s;">MAKE RESERVATION NOW</a>
+      <!-- <img id="home" src="../../../public/assest/image/hoe.png" alt="imaaaaaage" > -->
+      <div class="carousel-caption d-md-block" id="button">
+        <h1>ONLINE TICKET RESERVATION SYSTEM</h1>
+        <p>WELCOME TO E-TECKITING FOR RAILWAYS</p>
+        <a class="btn btn-primary" href="<?php echo url('booking'); ?>">MAKE RESERVATION NOW</a>
       </div>
    </div>
 <?php endif; ?>
 
 
-
+<style>
+#home {
+  width: 100%;
+  height: 577px;
+}
+.pic{
+   background-image: url('home.png');
+   
+}
+#button{
+    bottom: 30%;
+}
+</style>
 
 
 
